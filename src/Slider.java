@@ -40,14 +40,12 @@ public class Slider {
     sliderArray[0][0] = sliderArray [0][1];
     sliderArray[0][1] = speicher;
 */
-        for (int i = 0; i < 4; i++) {
-            for (int q = 0; q < 4; q++) {
-                if (sliderArray[i][q] == 0) {
-                    System.out.println(sliderArray[q][i]);
-                    int nullGefunden = sliderArray[q][i];
-                    System.out.println(nullGefunden);
-                } else {
-                    System.out.println("help");
+        for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 4; x++) {
+                if (sliderArray[y][x] == 0) {
+                    System.out.println(sliderArray[x][y]);
+                    System.out.println("x: "+x);
+                    System.out.println("y: "+y);
                 }
             }
         }
