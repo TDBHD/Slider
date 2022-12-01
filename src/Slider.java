@@ -1,9 +1,10 @@
 import java.util.Random;
 
 public class Slider {
-    int sliderArray[][]={{0,1,2,3},{4,5,6,7},{8,9,10,11},{12,13,14,15}};
-    int zeilen=4;
-    int spalten=4;
+    int sliderArray[][] = {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {12, 13, 14, 15}};
+    int sliderArrayRichtig[][] = {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {12, 13, 14, 15}};
+    int zeilen = 4;
+    int spalten = 4;
     int a;
 
     public void mischen(int[][] a) {
@@ -21,27 +22,43 @@ public class Slider {
         }
     }
 
-    public void Spielfeld(){
-     System.out.println("+--+--+--+--+--+--+");
-     System.out.println("| "+sliderArray[0][0]+" | "+sliderArray[0][1]+" | "+sliderArray[0][2]+" | "+sliderArray[0][3]+" | ");
-     System.out.println("+--+--+--+--+--+--+");
-     System.out.println("| "+sliderArray[1][0]+" | "+sliderArray[1][1]+" | "+sliderArray[1][2]+" | "+sliderArray[1][3]+" | ");
-     System.out.println("+--+--+--+--+--+--+");
-     System.out.println("| "+sliderArray[2][0]+" | "+sliderArray[2][1]+" | "+sliderArray[2][2]+" | "+sliderArray[2][3]+" | ");
-     System.out.println("+--+--+--+--+--+--+");
-     System.out.println("| "+sliderArray[3][0]+" | "+sliderArray[3][1]+" | "+sliderArray[3][2]+" | "+sliderArray[3][3]+" | ");
-     System.out.println("+--+--+--+--+--+--+");
- }
+    public void Spielfeld() {
+        System.out.println("+--+--+--+--+--+--+");
+        System.out.println("| " + sliderArray[0][0] + " | " + sliderArray[0][1] + " | " + sliderArray[0][2] + " | " + sliderArray[0][3] + " | ");
+        System.out.println("+--+--+--+--+--+--+");
+        System.out.println("| " + sliderArray[1][0] + " | " + sliderArray[1][1] + " | " + sliderArray[1][2] + " | " + sliderArray[1][3] + " | ");
+        System.out.println("+--+--+--+--+--+--+");
+        System.out.println("| " + sliderArray[2][0] + " | " + sliderArray[2][1] + " | " + sliderArray[2][2] + " | " + sliderArray[2][3] + " | ");
+        System.out.println("+--+--+--+--+--+--+");
+        System.out.println("| " + sliderArray[3][0] + " | " + sliderArray[3][1] + " | " + sliderArray[3][2] + " | " + sliderArray[3][3] + " | ");
+        System.out.println("+--+--+--+--+--+--+");
+    }
 
-public void spielen(){
-        EinUndAusgabe einlesen = new EinUndAusgabe();
-    System.out.println("Zeile: ");
-    int zeile= einlesen.leseInteger();
-    System.out.println("Spalte: ");
-    int spalte= einlesen.leseInteger();
+    public void spielen() {
+/* swap
+    int speicher = sliderArray[0][0];
+    sliderArray[0][0] = sliderArray [0][1];
+    sliderArray[0][1] = speicher;
+*/
+        for (int i = 0; i < 4; i++) {
+            for (int q = 0; q < 4; q++) {
+                if (sliderArray[i][q] == 0) {
+                    System.out.println(sliderArray[q][i]);
+                    int nullGefunden = sliderArray[q][i];
+                    System.out.println(nullGefunden);
+                } else {
+                    System.out.println("help");
+                }
+            }
+        }
 
-    if (zeile==sliderArray[zeile][spalte]){
 
     }
+
+    public void gameOver() {
+        if (sliderArray == sliderArrayRichtig) {
+            System.out.println("Gewonnen!");
+        }
     }
 }
+
